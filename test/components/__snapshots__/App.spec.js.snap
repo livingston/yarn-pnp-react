@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render the component 1`] = `
+<DocumentFragment>
+  <section>
+    Hello, how are you?
+  </section>
+</DocumentFragment>
+`;
