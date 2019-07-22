@@ -36,6 +36,23 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
+app.use('*', (req, res) => {
+  const filename = path.join(compiler.outputPath, './index.html');
+
+  compiler.outputFileSystem.readFile(filename, (err, result) => {
+    res.set('content-type', 'text/html');
+
+    if (err) {
+      res.send(`<meta http-equiv="refresh" content="1">
+        <center style="line-height: 100vh;">Hold your horses! Still bundling the files…</center>`);
+    } else {
+      res.send(result);
+    }
+
+    res.end();
+  });
+});
+
 app.listen(port, host, (err) => {
   if (err) {
     log(err);
