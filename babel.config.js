@@ -20,6 +20,7 @@ module.exports = {
     "@babel/preset-react"
   ],
   "plugins": [
+    "macros",
     "react-hot-loader/babel",
     [require.resolve('babel-plugin-module-resolver'), {
       root: ["./src/"]
