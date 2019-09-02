@@ -5,10 +5,8 @@ import App from 'components/App';
 
 describe('App', () => {
   it('should render the component', () => {
-    const { container, asFragment } = render(<App />);
+    const { container } = render(<App />);
 
-    expect(container.firstChild.textContent).toContain('Hello, how are you?');
-
-    expect(asFragment()).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 });
