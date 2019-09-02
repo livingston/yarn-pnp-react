@@ -10,13 +10,18 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "airbnb",
-    "plugin:import/errors"
+    "plugin:import/errors",
+    "plugin:jsx-control-statements/recommended"
+  ],
+  "plugins": [
+    "react-hooks",
+    "jsx-control-statements"
   ],
   "settings": {
     "import/resolver": {
       [require.resolve('./scripts/eslint-resolver.js')]: {},
       "babel-module": {}
-    }
+    },
   },
   "rules": {
     "comma-dangle": [
@@ -29,6 +34,12 @@ module.exports = {
         ".js",
         ".jsx"
       ]
-    }]
+    }],
+    "react/jsx-wrap-multilines": 0,
+    "react/jsx-closing-tag-location": 0,
+    "react/jsx-no-undef": [2, { "allowGlobals": true }],
+
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 };

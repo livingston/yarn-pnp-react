@@ -22,6 +22,10 @@ module.exports = {
   "plugins": [
     "macros",
     "react-hot-loader/babel",
+    "jsx-control-statements",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-default-from",
     [require.resolve('babel-plugin-module-resolver'), {
       root: ["./src/"]
     }]
@@ -29,6 +33,7 @@ module.exports = {
   "env": {
     "test": {
       "plugins": [
+        "dynamic-import-node",
         "@babel/plugin-transform-modules-commonjs"
       ]
     }
