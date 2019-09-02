@@ -6,7 +6,7 @@ import {
 import http, { CancelToken, isCancel } from './ajaxHelper';
 
 // const noop = () => {};
-const defaultTransform = d => d;
+const defaultTransform = (d) => d;
 const defaultOptions = {};
 
 const initialResponse = {

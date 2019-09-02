@@ -3,7 +3,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import useHTTP from '../useHTTP';
 
 const List = () => {
-  const transformData = useCallback(r => (r.map(d => ({ ...d, name: d.name.toUpperCase() }))), []);
+  const transformData = useCallback((r) => (r.map((d) => ({
+    ...d,
+    name: d.name.toUpperCase()
+  }))), []);
   const [fetchOptions] = useState({ transformData });
 
   const { data, fetch } = useHTTP('http://jsonplaceholder.typicode.com/users', fetchOptions);
